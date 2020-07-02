@@ -12,7 +12,8 @@ Star.delete_all
 
 movie1 = Movie.new({
     'title' =>'Into The Wild',
-    'genre' => 'drama'
+    'genre' => 'drama',
+    'budget' => 5000000
 })
 movie1.save()
 
@@ -35,7 +36,7 @@ star2.save()
 casting1 = Casting.new({
     'movie_id' => movie1.id,
     'star_id' => star2.id,
-    'fee' => '100'
+    'fee' => '1000'
 })
 casting1.save()
 
