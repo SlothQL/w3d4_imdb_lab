@@ -4,8 +4,11 @@ require_relative('models/casting')
 
 require('pry-byebug')
 
+Casting.delete_all()
 Movie.delete_all()
 Star.delete_all
+
+
 
 movie1 = Movie.new({
     'title' =>'Into The Wild',
@@ -21,6 +24,20 @@ star1 = Star.new( {
     'last_name' => "Affleck"
 })
 star1.save()
+
+star2 = Star.new( {
+    'first_name' => "Kirsten",
+    'last_name' => "Stewart"
+})
+star2.save()
+
+
+casting1 = Casting.new({
+    'movie_id' => movie1.id,
+    'star_id' => star2.id,
+    'fee' => '100'
+})
+casting1.save()
 
 binding.pry
 nil
